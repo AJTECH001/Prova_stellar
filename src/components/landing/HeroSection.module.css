@@ -1,0 +1,173 @@
+.hero {
+	position: relative;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 80px 24px;
+	text-align: center;
+	overflow: hidden;
+	background-color: hsl(var(--bg-primary));
+}
+
+.glow {
+	pointer-events: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 700px;
+	height: 700px;
+	transform: translate(-50%, -50%);
+	background: radial-gradient(
+		circle,
+		hsla(var(--brand-primary), 0.15) 0%,
+		transparent 70%
+	);
+	filter: blur(80px);
+	z-index: 0;
+}
+
+.content {
+	position: relative;
+	z-index: 1;
+	max-width: 900px;
+	width: 100%;
+}
+
+.badge {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 40px;
+}
+
+.badgeDot {
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background-color: hsl(var(--brand-primary));
+}
+
+.badge span {
+	font-size: 11px;
+	font-weight: 800;
+	text-transform: uppercase;
+	letter-spacing: 0.2em;
+	color: hsl(var(--brand-primary));
+}
+
+.title {
+	font-size: clamp(2.5rem, 6vw, 5.5rem);
+	font-weight: 900;
+	line-height: 1;
+	letter-spacing: -0.03em;
+	margin-bottom: 32px;
+}
+
+.block {
+	display: block;
+	color: hsl(var(--text-primary));
+}
+
+.gradient {
+	display: block;
+	background: linear-gradient(
+		to right,
+		hsl(var(--brand-primary)),
+		hsl(var(--brand-accent))
+	);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.description {
+	max-width: 600px;
+	margin: 0 auto;
+	font-size: clamp(1rem, 2vw, 1.125rem);
+	line-height: 1.6;
+	color: hsl(var(--text-secondary));
+	margin-bottom: 48px;
+}
+
+.ctaGroup {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 16px;
+}
+
+@media (min-width: 640px) {
+	.ctaGroup {
+		flex-direction: row;
+	}
+}
+
+.primaryCta {
+	background-color: hsl(var(--brand-primary));
+	color: hsl(var(--text-on-brand));
+	padding: 14px 40px;
+	border-radius: 0px;
+	font-weight: 800;
+	font-size: 15px;
+	text-transform: uppercase;
+	transition: all 0.2s ease;
+	border: 1px solid hsl(var(--text-primary));
+}
+
+.primaryCta:hover {
+	background-color: hsl(var(--bg-primary));
+	color: hsl(var(--text-primary));
+	transform: translateY(-2px);
+}
+
+.secondaryCta {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	padding: 14px 40px;
+	border-radius: 0px;
+	border: 1px solid hsl(var(--text-primary));
+	font-weight: 700;
+	font-size: 15px;
+	text-transform: uppercase;
+	color: hsl(var(--text-primary));
+	transition: all 0.3s ease;
+}
+
+.secondaryCta:hover {
+	border-color: hsla(var(--brand-primary), 0.4);
+	color: hsl(var(--text-primary));
+}
+
+.scrollIndicator {
+	position: absolute;
+	bottom: 40px;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 8px;
+	opacity: 0.4;
+	animation: float 2s ease-in-out infinite;
+}
+
+.scrollIndicator span {
+	font-size: 10px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	color: hsl(var(--text-muted));
+}
+
+@keyframes float {
+	0%,
+	100% {
+		transform: translate(-50%, 0);
+	}
+	50% {
+		transform: translate(-50%, 10px);
+	}
+}

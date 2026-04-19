@@ -1,2 +1,71 @@
-/* Import font for Stellar Design System */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Inconsolata:wght@500&display=swap");
+
+:root {
+	/* Minimalist Palette: Deep Yellow, Black, White */
+	--brand-primary: 42 100% 50%; /* Deep Yellow / Golden */
+	--brand-primary-hover: 42 100% 45%;
+	--brand-secondary: 42 100% 50%;
+	--brand-accent: 42 100% 50%;
+
+	/* Foundations */
+	--bg-primary: 0 0% 100%; /* Pure White */
+	--bg-secondary: 0 0% 98%; /* Very light gray for depth */
+
+	--text-primary: 0 0% 0%; /* Pure Black */
+	--text-secondary: 0 0% 20%;
+	--text-muted: 0 0% 45%;
+	--text-on-brand: 0 0% 0%; /* Black text on Yellow buttons for visibility */
+
+	--border-subtle: 0 0% 90%;
+	--border-strong: 0 0% 0%; /* Strong black borders */
+
+	--radius-sm: 4px;
+	--radius-md: 8px;
+	--radius-lg: 0px; /* Sharper edges for a premium minimalist look */
+	--radius-full: 9999px;
+
+	--glass-bg: rgba(255, 255, 255, 0.9);
+	--glass-border: rgba(0, 0, 0, 0.1);
+	--glass-blur: 10px;
+}
+
+[data-theme="dark"] {
+	--bg-primary: 0 0% 0%; /* Pure Black */
+	--bg-secondary: 0 0% 5%; /* Very dark gray */
+
+	--text-primary: 0 0% 100%; /* Pure White */
+	--text-secondary: 0 0% 85%;
+	--text-muted: 0 0% 60%;
+
+	--border-subtle: 0 0% 15%;
+	--border-strong: 0 0% 100%;
+
+	--glass-bg: rgba(0, 0, 0, 0.9);
+	--glass-border: rgba(255, 255, 255, 0.1);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Inter", sans-serif;
+	background-color: hsl(var(--bg-primary));
+	color: hsl(var(--text-primary));
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+button {
+	cursor: pointer;
+	border: none;
+	background: none;
+	font-family: inherit;
+}

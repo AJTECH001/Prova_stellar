@@ -1,0 +1,73 @@
+.container {
+	padding: 120px 24px;
+	background-color: hsl(var(--bg-primary));
+	text-align: center;
+	border-top: 1px solid hsl(var(--text-primary));
+}
+
+.sectionTitle {
+	font-size: clamp(2.5rem, 5vw, 4rem);
+	font-weight: 900;
+	text-transform: uppercase;
+	margin-bottom: 64px;
+	color: hsl(var(--text-primary));
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 0px; /* Grid gaps for sharp borders */
+	max-width: 1200px;
+	margin: 0 auto;
+	border: 1px solid hsl(var(--text-primary));
+}
+
+.card {
+	background: hsl(var(--bg-primary));
+	padding: 60px 40px;
+	border-radius: 0px;
+	border: 0.5px solid hsl(var(--text-primary));
+	text-align: left;
+	transition: all 0.2s ease;
+	display: flex;
+	flex-direction: column;
+}
+
+.card:hover {
+	background: hsl(var(--brand-primary));
+}
+
+.card:hover .cardTitle,
+.card:hover .cardDescription,
+.card:hover .iconWrapper {
+	color: hsl(var(--text-on-brand));
+}
+
+.iconWrapper {
+	width: 48px;
+	height: 48px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: transparent;
+	color: hsl(var(--brand-primary));
+	margin-bottom: 32px;
+}
+
+.iconWrapper svg {
+	width: 24px;
+	height: 24px;
+}
+
+.cardTitle {
+	font-size: 1.25rem;
+	font-weight: 700;
+	margin-bottom: 16px;
+	color: hsl(var(--text-primary));
+}
+
+.cardDescription {
+	font-size: 1rem;
+	line-height: 1.6;
+	color: hsl(var(--text-secondary));
+}

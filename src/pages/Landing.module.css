@@ -1,0 +1,138 @@
+.page {
+	min-height: 100vh;
+	background-color: hsl(var(--bg-primary));
+}
+
+.nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 100;
+	background: var(--glass-bg);
+	backdrop-filter: blur(var(--glass-blur));
+	border-bottom: 1px solid var(--glass-border);
+}
+
+.navContent {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 24px;
+	height: 72px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.logo {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+
+.logoSquare {
+	width: 24px;
+	height: 24px;
+	background: hsl(var(--brand-primary));
+	border-radius: 0px;
+}
+
+.logo span {
+	font-size: 1.25rem;
+	font-weight: 900;
+	letter-spacing: 0.1em;
+	color: hsl(var(--text-primary));
+}
+
+.navLinks {
+	display: flex;
+	align-items: center;
+	gap: 32px;
+}
+
+.navLink {
+	font-size: 14px;
+	font-weight: 700;
+	text-transform: uppercase;
+	color: hsl(var(--text-secondary));
+	transition: color 0.2s ease;
+}
+
+.navLink:hover {
+	color: hsl(var(--brand-primary));
+}
+
+@media (max-width: 640px) {
+	.navLink {
+		display: none;
+	}
+}
+
+.footer {
+	padding: 80px 24px 40px;
+	background-color: hsl(var(--bg-primary));
+	border-top: 1px solid hsl(var(--border-subtle));
+}
+
+.footerContent {
+	max-width: 1200px;
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 64px;
+	margin-bottom: 64px;
+}
+
+.footerBrand {
+	flex: 2;
+	min-width: 250px;
+}
+
+.footerTagline {
+	margin-top: 16px;
+	color: hsl(var(--text-secondary));
+	font-size: 14px;
+	max-width: 300px;
+}
+
+.footerLinks {
+	flex: 3;
+	display: flex;
+	gap: 64px;
+	flex-wrap: wrap;
+}
+
+.linkGroup {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.linkGroup h4 {
+	font-size: 14px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	margin-bottom: 8px;
+	color: hsl(var(--text-primary));
+}
+
+.linkGroup a {
+	font-size: 14px;
+	color: hsl(var(--text-secondary));
+	transition: color 0.2s ease;
+}
+
+.linkGroup a:hover {
+	color: hsl(var(--brand-primary));
+}
+
+.footerBottom {
+	max-width: 1200px;
+	margin: 0 auto;
+	border-top: 1px solid hsl(var(--border-subtle));
+	padding-top: 24px;
+	font-size: 12px;
+	color: hsl(var(--text-muted));
+	text-align: center;
+}

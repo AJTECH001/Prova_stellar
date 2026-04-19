@@ -2,8 +2,10 @@
 target
 .soroban
 
-# project identity and alias files will be in .config/stellar
+# project identity and alias files will be in .config/stellar or .stellar
 .config
+.stellar
+.stellar/
 
 # test snapshot folders from sample contracts
 test_snapshots

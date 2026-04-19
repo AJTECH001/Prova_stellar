@@ -1,36 +1,16 @@
-import { WalletNetwork } from "@creit.tech/stellar-wallets-kit"
 import { type Network, type NetworkType } from "@theahaco/contract-explorer"
-import { z } from "zod"
 
-const envSchema = z.object({
-	PUBLIC_STELLAR_NETWORK: z.enum([
-		"PUBLIC",
-		"FUTURENET",
-		"TESTNET",
-		"LOCAL",
-		"STANDALONE", // deprecated in favor of LOCAL
-	] as const),
-	PUBLIC_STELLAR_NETWORK_PASSPHRASE: z.nativeEnum(WalletNetwork),
-	PUBLIC_STELLAR_RPC_URL: z.string(),
-	PUBLIC_STELLAR_HORIZON_URL: z.string(),
-})
+export enum WalletNetwork {
+	PUBLIC = "Public Global Stellar Network ; September 2015",
+	TESTNET = "Test SDF Network ; September 2015",
+	FUTURENET = "Test SDF Future Network ; October 2022",
+	STANDALONE = "Standalone Network ; February 2017",
+}
 
-const parsed = envSchema.safeParse(import.meta.env)
-
-const env: z.infer<typeof envSchema> = parsed.success
-	? parsed.data
-	: {
-			PUBLIC_STELLAR_NETWORK: "LOCAL",
-			PUBLIC_STELLAR_NETWORK_PASSPHRASE: WalletNetwork.STANDALONE,
-			PUBLIC_STELLAR_RPC_URL: "http://localhost:8000/rpc",
-			PUBLIC_STELLAR_HORIZON_URL: "http://localhost:8000",
-		}
-
-export const stellarNetwork =
-	env.PUBLIC_STELLAR_NETWORK === "STANDALONE"
-		? "LOCAL"
-		: env.PUBLIC_STELLAR_NETWORK
-export const networkPassphrase = env.PUBLIC_STELLAR_NETWORK_PASSPHRASE
+export const stellarNetwork = "TESTNET"
+export const networkPassphrase = WalletNetwork.TESTNET
+export const rpcUrl = "https://soroban-testnet.stellar.org"
+export const horizonUrl = "https://horizon-testnet.stellar.org"
 
 const stellarEncode = (str: string) => {
 	return str.replace(/\//g, "//").replace(/;/g, "/;")
@@ -52,8 +32,6 @@ export const labPrefix = () => {
 }
 
 // NOTE: needs to be exported for contract files in this directory
-export const rpcUrl = env.PUBLIC_STELLAR_RPC_URL
-export const horizonUrl = env.PUBLIC_STELLAR_HORIZON_URL
 
 const networkToId = (network: string): NetworkType => {
 	switch (network) {

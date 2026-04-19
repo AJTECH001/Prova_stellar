@@ -1,0 +1,94 @@
+.section {
+	padding: 120px 24px;
+	background-color: hsl(var(--bg-primary));
+	border-bottom: 2px solid hsl(var(--text-primary));
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.header {
+	max-width: 800px;
+	margin-bottom: 80px;
+}
+
+.badge {
+	font-size: clamp(10px, 1.5vw, 12px);
+	font-weight: 900;
+	text-transform: uppercase;
+	letter-spacing: 0.25em;
+	color: hsl(var(--brand-primary));
+	margin-bottom: 24px;
+}
+
+.title {
+	font-size: clamp(2.5rem, 6vw, 5rem);
+	font-weight: 900;
+	line-height: 0.95;
+	letter-spacing: -0.04em;
+	color: hsl(var(--text-primary));
+	margin-bottom: 32px;
+}
+
+.description {
+	font-size: clamp(1rem, 2vw, 1.25rem);
+	line-height: 1.5;
+	color: hsl(var(--text-secondary));
+	max-width: 600px;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 1px;
+	background-color: hsl(var(--text-primary));
+	border: 1px solid hsl(var(--text-primary));
+}
+
+.card {
+	background-color: hsl(var(--bg-primary));
+	padding: 40px;
+	transition: background-color 0.2s ease;
+}
+
+.card:hover {
+	background-color: hsl(var(--brand-primary));
+}
+
+.card:hover .cardTitle,
+.card:hover .cardBody {
+	color: hsl(var(--text-on-brand));
+}
+
+.card:hover .dot {
+	background-color: hsl(var(--text-on-brand));
+}
+
+.cardHeader {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	margin-bottom: 20px;
+}
+
+.dot {
+	width: 10px;
+	height: 10px;
+	background-color: hsl(var(--brand-primary));
+}
+
+.cardTitle {
+	font-size: 1.125rem;
+	font-weight: 900;
+	text-transform: uppercase;
+	letter-spacing: -0.02em;
+	color: hsl(var(--text-primary));
+}
+
+.cardBody {
+	font-size: 0.95rem;
+	line-height: 1.6;
+	color: hsl(var(--text-secondary));
+}

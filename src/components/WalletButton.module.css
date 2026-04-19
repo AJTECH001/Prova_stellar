@@ -1,23 +1,57 @@
-/* Override the global a[target]::after external 
-link icon that appeared on the warning sign */
-.learnMore[target]::after {
-	content: none;
-	display: none;
-}
-.learnMore {
-	color: var(--sds-clr-lilac-09, #606);
-}
-
-.warningIcon {
-	height: 20px;
-	width: 20px;
-	color: var(--color-yellow-60, #f0ad4e);
-	position: absolute;
-	bottom: -8px;
-	right: -8px;
-	cursor: pointer;
+.connectBtn {
+	background: hsl(var(--brand-primary));
+	color: hsl(var(--text-on-brand));
+	padding: 10px 24px;
+	border-radius: 0px;
+	font-weight: 700;
+	font-size: 14px;
+	transition: all 0.2s ease;
+	border: 1px solid hsl(var(--text-primary));
 }
 
-.profileWrap {
-	position: relative;
+.connectBtn:hover {
+	background: hsl(var(--bg-primary));
+	color: hsl(var(--text-primary));
+}
+
+.connectBtn:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 6px 20px rgba(var(--brand-primary), 0.4);
+	filter: brightness(1.1);
+}
+
+.connectBtn:active {
+	transform: translateY(0);
+}
+
+.connectedContainer {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	background: var(--glass-bg);
+	backdrop-filter: blur(var(--glass-blur));
+	padding: 4px 4px 4px 16px;
+	border-radius: var(--radius-full);
+	border: 1px solid var(--glass-border);
+}
+
+.addressDisplay {
+	font-weight: 600;
+	font-size: 14px;
+	color: hsl(var(--text-primary));
+}
+
+.disconnectBtn {
+	background: hsl(var(--bg-secondary));
+	color: hsl(var(--text-secondary));
+	padding: 6px 16px;
+	border-radius: var(--radius-full);
+	font-size: 12px;
+	font-weight: 600;
+	transition: all 0.2s ease;
+}
+
+.disconnectBtn:hover {
+	background: hsla(var(--text-muted), 0.2);
+	color: hsl(var(--text-primary));
 }
