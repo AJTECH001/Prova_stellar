@@ -2,7 +2,7 @@ import { stellarNetwork } from "../contracts/util"
 
 // Utility to get the correct Friendbot URL based on environment
 export function getFriendbotUrl(address: string) {
-	switch (stellarNetwork) {
+	switch (stellarNetwork as string) {
 		case "LOCAL":
 			// Use proxy in development for local
 			return `/friendbot?addr=${address}`

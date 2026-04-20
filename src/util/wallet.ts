@@ -53,7 +53,7 @@ function getHorizonHost(mode: string) {
 }
 
 const horizon = new Horizon.Server(getHorizonHost(stellarNetwork), {
-	allowHttp: stellarNetwork === "LOCAL",
+	allowHttp: (stellarNetwork as string) === "LOCAL",
 })
 
 const formatter = new Intl.NumberFormat()

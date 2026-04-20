@@ -7,7 +7,8 @@ export enum WalletNetwork {
 	STANDALONE = "Standalone Network ; February 2017",
 }
 
-export const stellarNetwork = "TESTNET"
+export const stellarNetwork: "TESTNET" | "LOCAL" | "PUBLIC" | "FUTURENET" =
+	"TESTNET"
 export const networkPassphrase = WalletNetwork.TESTNET
 export const rpcUrl = "https://soroban-testnet.stellar.org"
 export const horizonUrl = "https://horizon-testnet.stellar.org"
@@ -17,7 +18,7 @@ const stellarEncode = (str: string) => {
 }
 
 export const labPrefix = () => {
-	switch (stellarNetwork) {
+	switch (stellarNetwork as string) {
 		case "LOCAL":
 			return `http://localhost:8000/lab/transaction-dashboard?$=network$id=custom&label=Custom&horizonUrl=${stellarEncode(horizonUrl)}&rpcUrl=${stellarEncode(rpcUrl)}&passphrase=${stellarEncode(networkPassphrase)};`
 		case "PUBLIC":

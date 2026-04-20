@@ -107,14 +107,14 @@ const Dashboard: React.FC = () => {
 
 			// Submit the signed transaction utilizing the client's built-in signAndSend
 			await tx.signAndSend({
-				signTransaction: async (xdr) => {
+				signTransaction: async (xdr: string) => {
 					setTxStatus("signing")
 					const result = await wallet.signTransaction(xdr, {
 						networkPassphrase,
 						address,
 					})
 					setTxStatus("submitting")
-					return result.signedTxXdr
+					return result
 				},
 			})
 
@@ -161,14 +161,14 @@ const Dashboard: React.FC = () => {
 			}
 
 			await tx.signAndSend({
-				signTransaction: async (xdr) => {
+				signTransaction: async (xdr: string) => {
 					setTxStatus("signing")
 					const result = await wallet.signTransaction(xdr, {
 						networkPassphrase,
 						address,
 					})
 					setTxStatus("submitting")
-					return result.signedTxXdr
+					return result
 				},
 			})
 
