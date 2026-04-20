@@ -1,8 +1,8 @@
 import { useMemo } from "react"
-import * as ExposureRegistry from "../contracts/generated/exposure-registry"
-import * as ProvaPolicy from "../contracts/generated/prova-policy"
-import * as ProvaPool from "../contracts/generated/prova-pool"
-import * as ProvaResolver from "../contracts/generated/prova-resolver"
+import * as ExposureRegistry from "../contracts/generated/exposure-registry/src/index"
+import * as ProvaPolicy from "../contracts/generated/prova-policy/src/index"
+import * as ProvaPool from "../contracts/generated/prova-pool/src/index"
+import * as ProvaResolver from "../contracts/generated/prova-resolver/src/index"
 import { rpcUrl, networkPassphrase } from "../contracts/util"
 import { useWallet } from "./useWallet"
 
